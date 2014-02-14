@@ -42,10 +42,6 @@
            
     </div>
     </div>
-	<form>	
-		<button type="button" class="backButton" onClick="location.href='/home'">
-		</button>
-	</form>
 	<div class="screen">
 		<h1 class="headerbox">{{name}}</h1>
 		<div class="idea">
@@ -56,7 +52,7 @@
 					<button type="submit" class="submitButton">BUY</button>
 				</form>
 				<hr>
-				<form action="/eventpage" method="get" id="{{eventcode}}" value="{{eventid}}">
+				<form action="/eventpage" method="get" id="eventcode" value="{{eventid}}">
 					<button type="submit" class="cancelButton">close</button>
 				</form>
 		</div>
