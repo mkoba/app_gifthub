@@ -6,16 +6,20 @@
 			"description": "She's getting old!!",
 			"idea": [
 				{
+					"eventid": "wM4Ef5",
 					"name": "Laptop",
 					"price": "$$$$",
 					"description": "Mari needs a laptop for school",
-					"image": "images/laptop.png"
+					"image": "images/laptop.png",
+					"bought": "false"
 				},
 				{
+					"eventid": "wM4Ef5",
 					"name": "Wine",
 					"price": "$",
 					"description": "She likes sweet wines!",
-					"image": "images/wine.png"
+					"image": "images/wine.png",
+					"bought": "false"
 				}
 			]
 	},
@@ -26,10 +30,12 @@
 			"description": "Because I don't know what to get her :/",
 			"idea": [
 				{
+					"eventid": "xD2gE7",
 					"name": "Wine",
 					"price": "$",
 					"description": "A good bottle of wine :)",
-					"image": "images/wine.png"
+					"image": "images/wine.png",
+					"bought": "false"
 				}
 			]
 	},
@@ -40,10 +46,12 @@
 		"description" : "Christmas time!!",
 		"idea": [
 			{
+				"eventid": "pO1lM4",
 				"name": "Laptop",
 				"price": "$$$$",
 				"description": "Macs > PC",
-				"image": "images/laptop.png"
+				"image": "images/laptop.png",
+				"bought": "false"
 			}
 		]
 	}
