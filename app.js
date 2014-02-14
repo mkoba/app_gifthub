@@ -9,6 +9,14 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
+var createevent = require('./routes/createevent');
+var eventcode = require('./routes/eventcode');
+var eventcreated = require('./routes/eventcreated');
+var eventpage = require('./routes/eventpage');
+var home = require('./routes/home');
+var idea = require('./routes/idea');
+var ideaundo = require('./routes/ideaundo');
+var submitidea = require('./routes/submitidea');
 
 // Example route
 // var user = require('./routes/user');
@@ -37,6 +45,15 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
+app.get('/createevent', createevent.view);
+app.get('/eventcode', eventcode.view);
+app.get('/eventcreated', eventcreated.view);
+app.get('/eventpage', eventpage.view);
+app.get('/home', home.view);
+app.get('/idea', idea.view);
+app.get('/ideaundo', idea.view);
+app.get('/submitidea', submitidea.view)
+
 // Example route
 // app.get('/users', user.list);
 
