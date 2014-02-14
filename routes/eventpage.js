@@ -9,7 +9,7 @@ exports.view = function(req, res){
 					"description": req.query.description,
 					"image": "images/cropped-gift-box.png",
 					"bought": "false"
-		}
+		};
 		console.log(newIdea);
 		var code = req.query.eventcode;
 		var e = data[code];
