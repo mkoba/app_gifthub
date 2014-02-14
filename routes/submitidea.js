@@ -5,3 +5,5 @@ exports.view = function(req, res){
 	console.log(e);
 	res.render('submitidea', e);
 };
+
+}
