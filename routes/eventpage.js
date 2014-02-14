@@ -18,6 +18,22 @@ exports.view = function(req, res){
 		e.idea.push(newIdea);
 		res.render('eventpage', e);
 	}
+	else if(typeof req.query.newevent != 'undefined'){
+		console.log("creating new event");
+		var id = req.query.newevent.split('+')[0];
+		var title = req.query.newevent.split('+')[1];
+		var date = req.query.newevent.split('+')[2];
+		var description = req.query.newevent.split('+')[3];
+		var newevent = {
+			"id": id,
+			"title": title,
+			"date": date,
+			"description": description,
+			"idea" : []
+		}
+		data[id] = newevent;
+		res.render('eventpage', data[id]);
+	}
 	else if(req.query.eventcode.length > 0){
 		console.log(data);
 		var code = req.query.eventcode;

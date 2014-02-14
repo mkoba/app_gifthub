@@ -49,10 +49,12 @@
 			Direct Link: <input class="input-sm" type="text" value="http://bit.ly/1nepl25">
 		</form>
 		<br>
+		<form>
+			Event Code:  <input class="input-sm" type="text" value="{{id}}" id="eventcode" name="eventcode"/>
+		</form>
 		<form id="eventcodeform" role="form" method="get" action="/eventpage">
-			Event Code:  <input class="input-sm" type="text" value="wM4Ef5" id="eventcode" name="eventcode"/>
 			<br>
-			<button type="submit" class="submitButton">Go to Event!</button>
+			<button type="submit" class="submitButton" id="newevent" value="{{id}}+{{title}}+{{date}}+{{description}}" name="newevent">Go to Event!</button>
 		</form>
 	</div>
 	   <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
