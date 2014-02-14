@@ -14,7 +14,7 @@ exports.view = function(req, res){
 		var idea = idealist[i];
 		console.log(idea.name == ideaname);
 		if (idea.name == ideaname){
-			res.render('idea', eventid, idea);
+			res.render('idea', idea);
 			break;
 		}
 	}
