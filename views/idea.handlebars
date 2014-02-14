@@ -24,15 +24,16 @@
 		</button>
 	</form>
 	<div class="screen">
-		<h1 class="headerbox"> Idea #N</h1>
+		<h1 class="headerbox">{{name}}</h1>
 		<div class="idea">
-				<img src="images/laptop.png" class="image">
-				<h3> Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$$$ </h3>
-				<form action="/ideaundo">
+				<img src="{{image}}" class="image">
+				<h3> {{price}} </h3>
+				<h1> {{description}}</h1>
+				<form action="/ideaundo" method="get">
 					<button type="submit" class="submitButton">BUY</button>
 				</form>
 				<hr>
-				<form action="/eventpage">
+				<form action="/eventpage" method="get" id="{{eventcode}}" value="{{eventid}}">
 					<button type="submit" class="cancelButton">close</button>
 				</form>
 		</div>

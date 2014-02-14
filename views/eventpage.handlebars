@@ -31,8 +31,8 @@
 		{{#each idea}}
 			<div class="idea">
 				<img src="{{image}}" class="image">
-				<form action="/idea">
-					<button type="submit" class="submitButton">{{name}}</button>
+				<form action="/idea" method="get">
+					<button id="selected" type="submit" class="submitButton" value="{{eventid}}+{{name}}" name="selected">{{name}}</button>
 				</form>
 				<hr>
 			</div>
