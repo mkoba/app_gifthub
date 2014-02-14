@@ -1,0 +1,50 @@
+{
+	"wM4Ef5":
+	{
+			"title": "Mari's Birthday",
+			"date": "April 5",
+			"description": "She's getting old!!",
+			"idea": [
+				{
+					"name": "Laptop",
+					"price": "$$$$",
+					"description": "Mari needs a laptop for school",
+					"image": "images/laptop.png"
+				},
+				{
+					"name": "Wine",
+					"price": "$",
+					"description": "She likes sweet wines!",
+					"image": "images/wine.png"
+				}
+			]
+	},
+	"xD2gE7":
+	{ 
+			"title": "Lynn's Birthday",
+			"date": "May 22",
+			"description": "Because I don't know what to get her :/",
+			"idea": [
+				{
+					"name": "Wine",
+					"price": "$",
+					"description": "A good bottle of wine :)",
+					"image": "images/wine.png"
+				}
+			]
+	},
+	"pO1lM4":
+	{
+		"title" : "Leon's Christmas Gift",
+		"date" : "December 24",
+		"description" : "Christmas time!!",
+		"idea": [
+			{
+				"name": "Laptop",
+				"price": "$$$$",
+				"description": "Macs > PC",
+				"image": "images/laptop.png"
+			}
+		]
+	}
+}
