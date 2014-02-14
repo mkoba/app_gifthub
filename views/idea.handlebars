@@ -42,10 +42,6 @@
            
     </div>
     </div>
-	<form>	
-		<button type="button" class="backButton" onClick="location.href='/home'">
-		</button>
-	</form>
 	<div class="screen">
 		<h1 class="headerbox">{{name}}</h1>
 		<div class="idea">
@@ -53,11 +49,11 @@
 				<h3> {{price}} </h3>
 				<h1> {{description}}</h1>
 				<form action="/ideaundo" method="get">
-					<button type="submit" class="submitButton">BUY</button>
+					<button type="submit" class="submitButton" id="bought" name="bought" value="{{eventid}}+{{name}}">BUY</button>
 				</form>
 				<hr>
-				<form action="/eventpage" method="get" id="{{eventcode}}" value="{{eventid}}">
-					<button type="submit" class="cancelButton">close</button>
+				<form action="/eventpage" method="get">
+					<button type="submit" class="cancelButton" value="{{eventid}}" id="eventcode" name="eventcode">close</button>
 				</form>
 		</div>
 	</div>

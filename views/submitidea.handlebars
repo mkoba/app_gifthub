@@ -46,6 +46,8 @@
 		<button type="button" class="backButton" onClick="location.href='/home'">
 		</button>
 	</form>
+
+    </div>
 	<div class="screen">
 		<h1 class="headerbox">Submit Idea</h1>
 		<form>
@@ -62,9 +64,9 @@
 		</form>
 		<form action="/eventpage">
 				<button type="submit" class="submitButton">Submit</button>
-		</form> 	queries
-		<form action="/eventpage">
-				<button type="submit" class="cancelButton">Cancel</button>
+		</form> 	
+		<form action="/eventpage" method="get">
+			<button type="submit" class="cancelButton" value="{{eventid}}" id="eventcode" name="eventcode">cancel</button>
 		</form>
 	</div>
 		<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
