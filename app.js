@@ -51,7 +51,7 @@ app.get('/eventcreated', eventcreated.view);
 app.get('/eventpage', eventpage.view);
 app.get('/home', home.view);
 app.get('/idea', idea.view);
-app.get('/ideaundo', idea.view);
+app.get('/ideaundo', ideaundo.view);
 app.get('/submitidea', submitidea.view)
 
 // Example route

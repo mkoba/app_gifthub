@@ -43,16 +43,17 @@
     </div>
     </div>
 	<div class="screen">
-		<h1 class="headerbox"> Idea #N - Bought!</h1>
+		<h1 class="headerbox">{{name}}</h1>
 		<div class="idea">
-				<img src="images/laptop.png" class="image">
-				<h3> Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$$$$ </h3>
-				<form action="/idea">
-					<button type="submit" class="submitButton">UNDO</button>
+				<img src="{{image}}" class="image">
+				<h3> {{price}} </h3>
+				<h1> {{description}}</h1>
+				<form action="/idea" method="get">
+					<button type="submit" class="submitButton" id="selected" name="selected" value="{{eventid}}+{{name}}" onclick="undoBuy({{eventid}},{{name}})">undo</button>
 				</form>
 				<hr>
-				<form action="/eventpage">
-					<button type="submit" class="cancelButton">close</button>
+				<form action="/eventpage" method="get">
+					<button type="submit" class="cancelButton" value="{{eventid}}" id="eventcode" name="eventcode">close</button>
 				</form>
 		</div>
 	</div>

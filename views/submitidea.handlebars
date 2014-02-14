@@ -58,9 +58,9 @@
 		</form>
 		<form action="/eventpage">
 				<button type="submit" class="submitButton">Submit</button>
-		</form> 	queries
-		<form action="/eventpage">
-				<button type="submit" class="cancelButton">Cancel</button>
+		</form> 	
+		<form action="/eventpage" method="get">
+			<button type="submit" class="cancelButton" value="{{eventid}}" id="eventcode" name="eventcode">cancel</button>
 		</form>
 	</div>
 		<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
