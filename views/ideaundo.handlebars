@@ -48,7 +48,7 @@
 		<div class="idea">
 				<img src="{{image}}" class="image">
 				<h3> {{price}} </h3>
-				<h1> {{description}}</h1>
+				<p><center>{{description}}</center></p>
 				<form action="/idea" method="get">
 					<button type="submit" class="submitButton" id="selected" name="selected" value="{{eventid}}+{{name}}" onclick="undoBuy({{eventid}},{{name}})">undo</button>
 				</form>
