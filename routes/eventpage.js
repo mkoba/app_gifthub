@@ -7,7 +7,7 @@ exports.view = function(req, res){
 					"name": req.query.name,
 					"price": req.query.price,
 					"description": req.query.description,
-					"image": "images/gift-box.png",
+					"image": "images/cropped-gift-box.png",
 					"bought": "false"
 		}
 		console.log(newIdea);
@@ -25,4 +25,8 @@ exports.view = function(req, res){
 		console.log(data[code]);
 		res.render('eventpage', data[code]);
 	}
+}
+
+function ideaClick(){
+	if 
 }
