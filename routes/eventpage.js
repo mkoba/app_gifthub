@@ -26,7 +26,3 @@ exports.view = function(req, res){
 		res.render('eventpage', data[code]);
 	}
 }
-
-function ideaClick(){
-	if 
-}
