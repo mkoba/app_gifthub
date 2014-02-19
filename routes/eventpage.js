@@ -35,8 +35,24 @@ exports.view = function(req, res){
 		res.render('eventpage', data[id]);
 	}
 	else if(req.query.eventcode.length > 0){
+		var params = req.query.eventcode.split('+');
+		console.log(params);
+		var code = params[0];
+		console.log(params);
+		if (params.length > 1){
+			var ideaBought = params[1];
+			var e = data[code];
+			var idealist = e.idea;
+			for (i in idealist){
+				var idea = idealist[i];
+				if (idea.name == ideaBought){
+					console.log("idea bought!");
+					console.log(idea.name);
+					idea.bought = "true";
+				}
+			}
+		}
 		console.log(data);
-		var code = req.query.eventcode;
 		console.log(code);
 		console.log(data[code]);
 		res.render('eventpage', data[code]);
