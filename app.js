@@ -17,6 +17,7 @@ var home = require('./routes/home');
 var idea = require('./routes/idea');
 var ideaundo = require('./routes/ideaundo');
 var submitidea = require('./routes/submitidea');
+var ideabought = require('./routes/ideabought');
 
 // Example route
 // var user = require('./routes/user');
@@ -52,7 +53,8 @@ app.get('/eventpage', eventpage.view);
 app.get('/home', home.view);
 app.get('/idea', idea.view);
 app.get('/ideaundo', ideaundo.view);
-app.get('/submitidea', submitidea.view)
+app.get('/submitidea', submitidea.view);
+app.get('/ideabought', ideabought.view);
 
 // Example route
 // app.get('/users', user.list);
