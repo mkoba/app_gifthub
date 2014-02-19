@@ -49,10 +49,10 @@
 
 		<hr>
 		{{#each idea}}
-			<div class="idea">
-				<img src="{{image}}" class="image">
+			<div class="idea" id="{{name}}">
+				<img src="{{image}}" class="image" id="{{bought}}_{{name}}_image">
 				<form action="/idea" method="get">
-					<button id="selected" type="submit" class="submitButton" value="{{eventid}}+{{name}}" name="selected" onclick="">{{name}}</button>
+					<button id="{{name}}_selected" type="submit" class="submitButton" value="{{eventid}}+{{name}}" name="selected">{{name}}</button>
 				</form>
 				<hr>
 			</div>
@@ -64,6 +64,7 @@
 		</form>
 	</div>
 		   <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	    <script src = "js/bootstrap.js"></script>	
+	    <script src = "/js/bootstrap.js"></script>	
+	    <script src = "/js/eventPage.js"></script>
 </body>
 </html>
