@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>GiftHub</title>	
+	<title>GiftHub: Event</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,21 +43,22 @@
     </div>
     </div>
     <br>
-		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-		<!-- p means paragraph -->
-		<div class="screen">
-			<h1 class="headerbox">GiftHub</h1>
-			<img src="images/octocat-large-transparent.png" class="image">
-			<br>
-			<form action="/createevent">
-				<button class="submitButton" id="create">Create Event</button>
-			</form>
-			<br>
-			<form action="/eventcode">
-				<button class="submitButton" id="eventCode">Enter Event Code</button>
-			</form>
+	<div class="screen">
+		<h1 class="headerbox">{{name}}</h1>
+		<div class="idea">
+				<img src="{{image}}" class="imagebought">
+				<h3 class="bought">{{price}} </h3>
+				<p class="bought"><center>{{description}}</center></p>
+				<form method="get" class="form">
+					<button type="submit" class="ideaBoughtButton" id="bought" name="bought" value="{{eventid}}+{{name}}" disabled="true">bought</button>
+				</form>
+				<hr>
+				<form action="/eventpage" method="get">
+					<button type="submit" class="cancelButton" value="{{eventid}}" id="eventcode" name="eventcode">close</button>
+				</form>
 		</div>
-			   <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	</div>
+		   <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	    <script src = "js/bootstrap.js"></script>	
 </body>
 </html>

@@ -41,19 +41,13 @@
            
     </div>
     </div>
+    <br>
 	<div class="screen">
 		<h1 class="headerbox">Create Event</h1>
-		<form>
-			<input class="input-lg" type="text" placeholder="Name" required>
-		</form>
-		<form>
-			<input class="input-lg" type="text" placeholder="Date" required>
-		</form>
-		<form>
-			<input class="input-lg" type="text" placeholder="Description">
-			</textarea>
-		</form>
-		<form action="/eventcreated">
+		<form action="/eventcreated" method="get">
+			<input class="input-lg" type="text" placeholder="Name" name="title" id="title" required>
+			<input class="input-lg" type="text" placeholder="Date" name="date" id="date" required>
+			<input class="input-lg" type="text" placeholder="Description" name="description" id="description">
 			<button type="submit" class="submitButton">Next</button>
 		</form>
 		<form action="/home">
