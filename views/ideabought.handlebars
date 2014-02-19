@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html>
 <head>
 	<title>GiftHub: Event</title>	
@@ -43,28 +44,21 @@
     </div>
     <br>
 	<div class="screen">
-		<h1 class="headerbox">{{title}}</h1>
-		<h5>{{date}}</h5>
-		<h7>{{description}}</h7>
-
-		<hr>
-		{{#each idea}}
-			<div class="idea" id="{{name}}">
-				<img src="{{image}}" class="image" id="{{bought}}_{{name}}_image">
-				<form action="/idea" method="get" id="{{name}}_form" class="form">
-					<button id="{{name}}_selected" type="submit" class="submitButton" value="{{eventid}}+{{name}}" name="selected">{{name}}</button>
+		<h1 class="headerbox">{{name}}</h1>
+		<div class="idea">
+				<img src="{{image}}" class="imagebought">
+				<h3 class="bought">{{price}} </h3>
+				<p class="bought"><center>{{description}}</center></p>
+				<form method="get" class="form">
+					<button type="submit" class="ideaBoughtButton" id="bought" name="bought" value="{{eventid}}+{{name}}" disabled="true">bought</button>
 				</form>
 				<hr>
-			</div>
-		{{/each}}
-
-		<br>
-		<form action="/submitidea">
-				<button type="submit" class="submitButton" name="submitidea" id="submitidea" value="{{id}}">Submit Idea</button>
-		</form>
+				<form action="/eventpage" method="get">
+					<button type="submit" class="cancelButton" value="{{eventid}}" id="eventcode" name="eventcode">close</button>
+				</form>
+		</div>
 	</div>
 		   <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	    <script src = "/js/bootstrap.js"></script>	
-	    <script src = "/js/eventPage.js"></script>
+	    <script src = "js/bootstrap.js"></script>	
 </body>
 </html>

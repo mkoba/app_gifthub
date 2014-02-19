@@ -20,6 +20,8 @@ function modifyBought(e){
 		document.getElementById(imageid).className = "imagebought";	
 		var buttonid = $(this).find('.submitButton').attr('id');
 		document.getElementById(buttonid).className = "ideaBoughtButton";
-		document.getElementById(buttonid).disabled = true;
+		var formid = $(this).find('.form').attr('id');
+		console.log(formid);
+		document.getElementById(formid).action = "/ideabought";
 	}
 }

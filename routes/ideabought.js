@@ -14,8 +14,8 @@ exports.view = function(req, res){
 		var idea = idealist[i];
 		console.log(idea.name == ideaname);
 		if (idea.name == ideaname){
-			idea.bought = "false";
-			res.render('idea', idea);
+			idea.bought = "true";
+			res.render('ideabought', idea);
 			break;
 		}
 	}

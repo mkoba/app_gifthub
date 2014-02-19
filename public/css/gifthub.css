@@ -209,7 +209,7 @@ textarea.input-xlg {
 }
 
 .ideaBoughtButton {
-     background-color:#888888;
+     background-color:#777777;
      -webkit-border-top-left-radius:5px;
      -moz-border-radius-topleft:5px;
      border-top-left-radius:5px;
@@ -238,8 +238,12 @@ textarea.input-xlg {
      text-decoration:none;
      text-align:center;
 }.ideaBoughtButton:hover {
-     background-color:#888888;
+     background-color:#777777;
 }.ideaBoughtButton:active {
      position:relative;
      top:1px;
+}
+
+.bought{
+    color: #777777;
 }
