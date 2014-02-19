@@ -12,7 +12,7 @@
 					"price": "$$$$",
 					"description": "Mari needs a laptop for school",
 					"image": "images/laptop.png",
-					"bought": "false"
+					"bought": "true"
 				},
 				{
 					"eventid": "wM4Ef5",
@@ -37,7 +37,7 @@
 					"price": "$",
 					"description": "A good bottle of wine :)",
 					"image": "images/wine.png",
-					"bought": "false"
+					"bought": "true"
 				}
 			]
 	},
