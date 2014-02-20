@@ -254,7 +254,7 @@ textarea.input-xlg {
     font-size: large;
     font-weight: normal;
     font-style: normal;
-    width: 50%;
+    width: 100%;
     height: 100%;
     text-align: center;
     text-indent: 0;
@@ -265,6 +265,6 @@ textarea.input-xlg {
     -webkit-appearance: none;
     -moz-appearance: none;
     color: #ffffff;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
