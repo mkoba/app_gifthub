@@ -23,7 +23,7 @@
 					"description": "She likes sweet wines!",
 					"image": "images/wine.png",
 					"bought": "false",
-					"vote":"1",
+					"vote":"3",
 					"voteDir":""
 				},
 				{
@@ -43,7 +43,7 @@
 					"description": "She secretly wants something larger than iphones",
 					"image": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/11/1384161811385/755f28ce-0f3b-4f69-8a57-d5d87d57df2c-460x276.jpeg",
 					"bought": "false",
-					"vote":"1",
+					"vote":"-1",
 					"voteDir":""
 				},
 				{
@@ -53,7 +53,7 @@
 					"description": "She loves watching Bob's Burgers",
 					"image": "http://images3.wikia.nocookie.net/__cb20130113192211/bobsburgerpedia/images/6/6e/Tina_render.png",
 					"bought": "false",
-					"vote":"1",
+					"vote":"8",
 					"voteDir":""
 				}
 			]
@@ -74,6 +74,26 @@
 					"bought": "true",
 					"vote":"1",
 					"voteDir":""
+				},
+				{
+					"eventid": "25589",
+					"name": "Trip to Barcelona",
+					"price": "$$$$",
+					"description": "Vacay!! ;)",
+					"image": "http://iaufrance.org/Content/Uploads/CMS/Images/barcelona-spain.jpg",
+					"bought": "false",
+					"vote":"3",
+					"voteDir":""
+				},
+				{
+					"eventid": "25589",
+					"name": "PB Bar & Grill Night",
+					"price": "$$",
+					"description": "Fun Night :D",
+					"image": "http://www.happyhourcard.com/places/image_10_47_58.jpg",
+					"bought": "false",
+					"vote":"4",
+					"voteDir":""
 				}
 			]
 	},
@@ -91,7 +111,17 @@
 				"description": "Macs > PC",
 				"image": "images/laptop.png",
 				"bought": "false",
-				"vote":"1",
+				"vote":"5",
+				"voteDir":""
+			},
+			{
+				"eventid": "84573",
+				"name": "Tesla",
+				"price": "$$$$",
+				"description": "See title",
+				"image": "http://cloudfront.mediamatters.org/static/images/countyfair/teslamodels-autoblog53013.jpg",
+				"bought": "false",
+				"vote":"6",
 				"voteDir":""
 			}
 		]
