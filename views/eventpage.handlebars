@@ -50,7 +50,7 @@
 		<hr>
 		{{#each idea}}
 			<div class="idea" id="{{name}}">
-				<img src="{{image}}" class="image" id="{{bought}}_{{name}}_image">
+				<img src="{{image}}" class="image" id="{{bought}}_{{voteDir}}_{{name}}_image">
 				<br>
 				<h1>
 					<form action="/eventpage" method="get" id="form_vote">
@@ -60,11 +60,38 @@
 					</form>
 				</h1>
 				<form action="/idea" method="get" id="{{name}}_form" class="form">
-					<button id="{{name}}_selected" type="submit" class="submitButton" value="{{eventid}}+{{name}}" name="selected">{{name}}</button>
-				</form>
-				<hr>
+				<button class="submitButton" id="{{name}}_selected" type="submit" value="{{eventid}}+{{name}}" name="selected" data-toggle="modal" 
+				data-target="#name">
+  {{name}}</button>
+			<div class="modal fade" id= "name" tabindex="-1" role="dialog" aria-labelledby="namelabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			        <h4 class="modal-title" id="namelabel">Details about this gift</h4>
+			      </div>
+			      <div class="modal-body">
+			        	<div class="idea">
+							<img src="{{image}}" class="image">
+							<h3>{{price}} </h3>
+							<p><center>{{description}}</center></p>
+							<form action="/ideaundo" method="get">
+								<button type="submit" class="submitButton" id="bought" name="bought" value="{{eventid}}+{{name}}">buy</button>
+							</form>
+							<hr>
+							<form action="/eventpage" method="get">
+								<button type="button" class="cancelButton" data-dismiss="modal" value="{{eventid}}" id="eventcode" name="eventcode">close</button>
+							</form>
+					</div>
+				</div>
+			      </div>
+			    </div>
+			  </div>
 			</div>
-		{{/each}}
+							<hr>
+						</div>
+					{{/each}}
+
 
 		<br>
 		<button class="submitButton" type data-toggle="modal" data-target="#myModal">Submit idea</button>
@@ -92,8 +119,8 @@
 					    </div>
 			      </div>
 		      	<div class="modal-footer">
-		      			 <button type="button" class="btn btn-default" value="{{eventid}}"" id="eventcode" name="eventcode" data-dismiss= "modal"" >Cancel</button>
-		      	         <button type="submit" class="btn btn-danger" id="eventcode" value="{{eventid}}" name="eventcode">Submit</button>
+		      			 <button type="button" class="cancelButton" value="{{eventid}}"" id="eventcode" name="eventcode" data-dismiss= "modal"" >Cancel</button>
+		      	         <button type="submit" class="submitButton" id="eventcode" value="{{eventid}}" name="eventcode">Submit</button>
 	    		</form>
 
       		  </div>
@@ -104,6 +131,5 @@
 	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src = "/js/bootstrap.js"></script>	
 	<script src = "/js/eventPage.js"></script>
-	<script src = "/js/voting.js"></script>
 </body>
 </html>

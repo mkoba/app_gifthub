@@ -16,7 +16,9 @@ exports.view = function(req, res){
 					"price": req.query.price,
 					"description": req.query.description,
 					"image": imageURL,
-					"bought": "false"
+					"bought": "false",
+					"vote": "0",
+					"voteDir": ""
 		};
 		console.log(newIdea);
 		var code = currentEvent;
@@ -64,7 +66,7 @@ exports.view = function(req, res){
 		res.render('eventpage', data[eventCode]);
 	}
 	else if (typeof req.query.downvote != 'undefined'){
-		var params = req.query.upvote.split('+');
+		var params = req.query.downvote.split('+');
 		var eventCode = params[0];
 		if (params.length > 1){
 			var ideaVoted = params[1];
