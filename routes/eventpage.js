@@ -62,6 +62,9 @@ exports.view = function(req, res){
 					idea.voteDir="up";
 				}
 			}
+			idealist = sort(idealist);
+			console.log(idealist);
+			data[eventCode].idea = idealist;
 		}
 		res.render('eventpage', data[eventCode]);
 	}
@@ -80,6 +83,8 @@ exports.view = function(req, res){
 					idea.voteDir="down";
 				}
 			}
+			idealist = sort(idealist);
+			data[eventCode].idea = idealist;
 		}
 		res.render('eventpage', data[eventCode]);
 	}
@@ -111,7 +116,8 @@ exports.view = function(req, res){
 
 function sort(array) {
     return array.sort(function(a, b) {
+    	console.log(a["vote"]);
         var x = a["vote"]; var y = b["vote"];
-        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        return ((x > y) ? -1 : ((x < y) ? 1 : 0));
     });
 }
