@@ -56,15 +56,17 @@ function modifyBought(e){
 		if (voteDirection == "up"){
 			var buttonid = $(this).closest('.idea').find('.upvoteButton').attr('id');
 			document.getElementById(buttonid).className = "ideaUpvotedButton";
-			
-			document.getElementById(buttonid).disable = "true";
+			document.getElementById(buttonid).disabled = "true";
+			buttonid = $(this).closest('.idea').find('.downvoteButton').attr('id');
+			document.getElementById(buttonid).disabled = "true";
 
 		}
 		else if (voteDirection == "down"){
 			var buttonid = $(this).closest('.idea').find('.downvoteButton').attr('id');
 			document.getElementById(buttonid).className = "ideaDownvotedButton";
-
-			document.getElementById(buttonid).disable = "true";
+			document.getElementById(buttonid).disabled = "true";
+			buttonid = $(this).closest('.idea').find('.upvoteButton').attr('id');
+			document.getElementById(buttonid).disabled = "true";
 		}
 	}
 }
