@@ -109,11 +109,6 @@ exports.view = function(req, res){
 		console.log(data);
 		console.log(code);
 		console.log(data[code]);
-		currentEvent = code;
-		var e = data[code];
-		var idealist = e.idea;
-		idealist = sort(idealist);
-		data[code].idea = idealist;
 		res.render('eventpage', data[code]);
 	}
 }
