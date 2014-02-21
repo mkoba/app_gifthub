@@ -26,6 +26,9 @@ exports.view = function(req, res){
 		console.log(e);
 		console.log(e.idea);
 		e.idea.push(newIdea);
+		var idealist = e.idea;
+		idealist = sort(idealist);
+		data[code].idea = idealist;
 		res.render('eventpage', e);
 	}
 	else if(typeof req.query.newevent != 'undefined'){
