@@ -199,6 +199,9 @@ textarea.input-xlg {
     margin-right: auto;
     max-width: 200px;
     opacity: 0.5;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
 }
 .imagebought:hover{
     display: block;

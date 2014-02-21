@@ -1,13 +1,20 @@
 var data = require('../data.json');
 exports.view = function(req, res){
 	if (typeof req.query.name != 'undefined'){
+		var serverUrl = 'https://api.parse.com/1/files/' + req.query.image;
 		console.log("submitting new idea");
+		console.log("image:");
+		console.log(req.query.image);
+		var imageURL = "../public/images/cropped-gift-box.png";
+		if(req.query.image != ''){
+			imageURL = req.query.image;
+		}
 		var newIdea = {
 					"eventid": req.query.eventcode,
 					"name": req.query.name,
 					"price": req.query.price,
 					"description": req.query.description,
-					"image": "images/cropped-gift-box.png",
+					"image": imageURL,
 					"bought": "false"
 		};
 		console.log(newIdea);
