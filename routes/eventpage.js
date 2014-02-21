@@ -6,7 +6,7 @@ exports.view = function(req, res){
 		console.log("submitting new idea");
 		console.log("image:");
 		console.log(req.query.image);
-		var imageURL = "../public/images/cropped-gift-box.png";
+		var imageURL = "images/cropped-gift-box.png";
 		if(req.query.image != ''){
 			imageURL = req.query.image;
 		}
@@ -67,4 +67,11 @@ exports.view = function(req, res){
 		currentEvent = code;
 		res.render('eventpage', data[code]);
 	}
+}
+
+function sort(array) {
+    return array.sort(function(a, b) {
+        var x = a["vote"]; var y = b["vote"];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
 }
