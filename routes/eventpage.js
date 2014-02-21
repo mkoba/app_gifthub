@@ -43,6 +43,44 @@ exports.view = function(req, res){
 		data[id] = newevent;
 		res.render('eventpage', data[id]);
 	}
+	else if (typeof req.query.upvote != 'undefined'){
+		var params = req.query.upvote.split('+');
+		var eventCode = params[0];
+		if (params.length > 1){
+			var ideaVoted = params[1];
+			console.log("ideaVoted");
+			console.log(ideaVoted);
+			var voteTally = parseInt(params[2]);
+			var e = data[eventCode];
+			var idealist = e.idea;
+			for (i in idealist){
+				var idea = idealist[i];
+				if (idea.name == ideaVoted){
+					idea.vote = voteTally+1;
+					idea.voteDir="up";
+				}
+			}
+		}
+		res.render('eventpage', data[eventCode]);
+	}
+	else if (typeof req.query.downvote != 'undefined'){
+		var params = req.query.upvote.split('+');
+		var eventCode = params[0];
+		if (params.length > 1){
+			var ideaVoted = params[1];
+			var voteTally = parseInt(params[2]);
+			var e = data[eventCode];
+			var idealist = e.idea;
+			for (i in idealist){
+				var idea = idealist[i];
+				if (idea.name == ideaVoted){
+					idea.vote = voteTally-1;
+					idea.voteDir="down";
+				}
+			}
+		}
+		res.render('eventpage', data[eventCode]);
+	}
 	else if(req.query.eventcode.length > 0){
 		var params = req.query.eventcode.split('+');
 		console.log(params);

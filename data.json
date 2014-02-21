@@ -12,7 +12,9 @@
 					"price": "$$$$",
 					"description": "Mari needs a laptop for school",
 					"image": "images/laptop.png",
-					"bought": "true"
+					"bought": "true",
+					"vote":"1",
+					"voteDir":""
 				},
 				{
 					"eventid": "31415",
@@ -20,7 +22,9 @@
 					"price": "$",
 					"description": "She likes sweet wines!",
 					"image": "images/wine.png",
-					"bought": "false"
+					"bought": "false",
+					"vote":"1",
+					"voteDir":""
 				}
 			]
 	},
@@ -37,7 +41,9 @@
 					"price": "$",
 					"description": "A good bottle of wine :)",
 					"image": "images/wine.png",
-					"bought": "true"
+					"bought": "true",
+					"vote":"1",
+					"voteDir":""
 				}
 			]
 	},
@@ -54,7 +60,9 @@
 				"price": "$$$$",
 				"description": "Macs > PC",
 				"image": "images/laptop.png",
-				"bought": "false"
+				"bought": "false",
+				"vote":"1",
+				"voteDir":""
 			}
 		]
 	}
