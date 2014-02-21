@@ -5,12 +5,16 @@ exports.view = function(req, res){
 		console.log("submitting new idea");
 		console.log("image:");
 		console.log(req.query.image);
+		var imageURL = "../public/images/cropped-gift-box.png";
+		if(req.query.image != ''){
+			imageURL = req.query.image;
+		}
 		var newIdea = {
 					"eventid": req.query.eventcode,
 					"name": req.query.name,
 					"price": req.query.price,
 					"description": req.query.description,
-					"image": req.query.image,
+					"image": imageURL,
 					"bought": "false"
 		};
 		console.log(newIdea);
