@@ -113,7 +113,7 @@ exports.view = function(req, res){
 		var e = data[code];
 		var idealist = e.idea;
 		idealist = sort(idealist);
-		data[eventCode].idea = idealist;
+		data[code].idea = idealist;
 		res.render('eventpage', data[code]);
 	}
 }
