@@ -1,4 +1,5 @@
 var data = require('../data.json');
+var currentEvent;
 exports.view = function(req, res){
 	if (typeof req.query.name != 'undefined'){
 		var serverUrl = 'https://api.parse.com/1/files/' + req.query.image;
@@ -10,7 +11,7 @@ exports.view = function(req, res){
 			imageURL = req.query.image;
 		}
 		var newIdea = {
-					"eventid": req.query.eventcode,
+					"eventid": currentEvent,
 					"name": req.query.name,
 					"price": req.query.price,
 					"description": req.query.description,
@@ -18,7 +19,7 @@ exports.view = function(req, res){
 					"bought": "false"
 		};
 		console.log(newIdea);
-		var code = req.query.eventcode;
+		var code = currentEvent;
 		var e = data[code];
 		console.log(e);
 		console.log(e.idea);
@@ -62,6 +63,7 @@ exports.view = function(req, res){
 		console.log(data);
 		console.log(code);
 		console.log(data[code]);
+		currentEvent = code;
 		res.render('eventpage', data[code]);
 	}
 }

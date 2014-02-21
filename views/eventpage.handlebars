@@ -18,30 +18,28 @@
 </head>
 
 <body>
-	   <div class = "navbar navbar-inverse navbar-fixed-top">
-    <div class = "container">
-           
-            <a href = "#" class = "navbar-brand">
-            <img height="25" src="images/octocat-large-transparent.png">GiftHub
-            </a>
-           
-            <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
-                    <span class = "icon-bar"></span>
-                    <span class = "icon-bar"> </span>
-                    <span class = "icon-bar"></span>
-            </button>
-           
-            <div class = "collapse navbar-collapse navHeaderCollapse">  
-            <ul class = "nav navbar-nav navbar-right">
-           
-                    <li><a href = "/home">Home</a></li>
-   
-                    <li><a href = "/createevent">Create Event</a></li>
-                    <li><a href = "/eventcode">Event Code </a></li>
-            </ul>
-            </div>
-           
-    </div>
+	<div class = "navbar navbar-inverse navbar-fixed-top">
+	    <div class = "container">
+	            <a href = "#" class = "navbar-brand">
+	            <img height="25" src="images/octocat-large-transparent.png">GiftHub
+	            </a>
+	           
+	            <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+	                    <span class = "icon-bar"></span>
+	                    <span class = "icon-bar"> </span>
+	                    <span class = "icon-bar"></span>
+	            </button>
+	           
+	            <div class = "collapse navbar-collapse navHeaderCollapse">  
+	            <ul class = "nav navbar-nav navbar-right">
+	           
+	                    <li><a href = "/home">Home</a></li>
+	   
+	                    <li><a href = "/createevent">Create Event</a></li>
+	                    <li><a href = "/eventcode">Event Code </a></li>
+	            </ul>
+	            </div>
+	    </div>
     </div>
     <br>
 	<div class="screen">
@@ -64,46 +62,42 @@
 		<form action="/submitidea">
 				<button type="submit" class="submitButton" name="submitidea" id="submitidea" value="{{id}}">Submit Idea</button>
 		</form>
+		<button class="submitButton" type data-toggle="modal" data-target="#myModal">Submit idea</button>
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title" id="myModalLabel"><b>submit a gift idea</b></h4>
+		      </div>
+		      <div class="modal-body">
+		        <form action="/eventpage" method="get">
+					<input id="name" name="name" class="input-lg" type="text" placeholder="Name" required>
+					<input id="description" name="description" class="input-lg" type="text" placeholder="Description" required>
+					<input id="image" name="image" class="input-lg" type="text" placeholder="Image URL">
+					<div class="dropdown">
+				    	<select name="price" class="dropdown" id="price" name="price">
+				        	<option value=""><center>select price</center></option>
+				        	<option value="$"><center>$</center></option>
+				        	<option value="$$"><center>$$</center></option>
+				        	<option value="$$$"><center>$$$</center></option>
+				        	<option value="$$$$"><center>$$$$</center></option>
+				    	</select>
+					    </div>
+			      </div>
+		      	<div class="modal-footer">
+		      			 <button type="button" class="btn btn-default" value="{{eventid}}"" id="eventcode" name="eventcode" data-dismiss= "modal"" >Cancel</button>
+		      	         <button type="submit" class="btn btn-danger" id="eventcode" value="{{eventid}}" name="eventcode">Submit</button>
+	    		</form>
+
+      		  </div>
+    		</div>
+  		  </div>
+		</div>
 	</div>
-		   <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	    <script src = "/js/bootstrap.js"></script>	
-	    <script src = "/js/eventPage.js"></script>
-
-
-
-
-<button class="submitButton" type data-toggle="modal" data-target="#myModal">Submit idea</button>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><b>submit a gift idea</b></h4>
-      </div>
-      <div class="modal-body">
-        <form action="/eventpage" method="get">
-			<input id="name" name="name" class="input-lg" type="text" placeholder="Name" required>
-			<input id="description" name="description" class="input-lg" type="text" placeholder="Description" required>
-			<input id="image" name="image" class="input-lg" type="text" placeholder="Image URL">
-			<div class="dropdown">
-		    	<select name="price" class="dropdown" id="price" name="price">
-		        	<option value=""><center>select price</center></option>
-		        	<option value="$"><center>$</center></option>
-		        	<option value="$$"><center>$$</center></option>
-		        	<option value="$$$"><center>$$$</center></option>
-		        	<option value="$$$$"><center>$$$$</center></option>
-		    	</select>
-		    </div>
-      </div>
-      <div class="modal-footer">
-      			 <button type="button" class="btn btn-default" value="{{eventid}}"" id="eventcode" name="eventcode" data-dismiss= "modal"" >Cancel</button>
-      	         <button type="submit" class="btn btn-danger" id="eventcode" value="{{eventid}}" name="eventcode">Submit</button>
-    </form>
-
-      </div>
-    </div>
-  </div>
-</div>
+	<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src = "/js/bootstrap.js"></script>	
+	<script src = "/js/eventPage.js"></script>
 </body>
 </html>
