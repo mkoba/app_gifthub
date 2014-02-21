@@ -39,6 +39,7 @@ exports.view = function(req, res){
 			"description": description,
 			"idea" : []
 		}
+		currentEvent = id;
 		data[id] = newevent;
 		res.render('eventpage', data[id]);
 	}
