@@ -251,6 +251,38 @@ textarea.input-xlg {
     color: #777777;
 }
 
+.upvoteButton{
+    background: url("../images/upvote.png") no-repeat;
+    height: 100%;
+    min-height: 100px;
+    min-width: 100px;
+    border:none;
+}
+
+.ideaUpvotedButton{
+    background: url("../images/voted-upvote.png")no-repeat;
+    height: 100%;
+    min-height: 100px;
+    min-width: 100px;
+    border:none;
+}
+
+.downvoteButton{
+    background: url("../images/downvote.png")no-repeat;
+    height: 100%;
+    min-height: 100px;
+    min-width: 100px;
+    border:none;
+}
+
+.ideaDownvotedButton{
+    background: url("../images/voted-downvote.png")no-repeat;
+    height: 100%;
+    min-height: 100px;
+    min-width: 100px;
+    border:none;
+}
+
 .dropdown {
     display:inline-block;
     text-transform: lowercase;
