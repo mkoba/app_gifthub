@@ -110,6 +110,8 @@ exports.view = function(req, res){
 		console.log(code);
 		console.log(data[code]);
 		currentEvent = code;
+		var e = data[eventCode];
+		var idealist = e.idea;
 		idealist = sort(idealist);
 		data[eventCode].idea = idealist;
 		res.render('eventpage', data[code]);
