@@ -50,43 +50,59 @@
 		<hr>
 		{{#each idea}}
 			<div class="idea" id="{{name}}">
-				<img src="{{image}}" class="image" id="{{bought}}_{{voteDir}}_{{name}}_image">
+				<img src="{{image}}" class="image" id="{{bought}}_{{name}}_image">
+				<br>
 				<h1>
-						<button id="{{name}}_upvote" type="button" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote" onClick="modifyVoteUp(this.id)"></button>
-						{{vote}}
-						<button id="{{name}}_downvote" type="button" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onClick="modifyVoteDown(this.id)"></button>
+					<button id="{{name}}_upvote" type="submit" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote" onclick="modifyVoteUp(this.id)"></button>
+					{{vote}}
+					<button id="{{name}}_downvote" type="submit" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onclick="modifyVoteDown(this.id)"></button>
+					</form>
 				</h1>
-				<form action="/idea" method="get" id="{{name}}_form" class="form">
-					<button id="{{name}}_selected" type="submit" class="submitButton" value="{{eventid}}+{{name}}" name="selected">{{name}}</button>
-				</form>
-				<!-- MODAL
-				<form action="/idea" method="get" id="{{name}}_form" class="form">
-					<button class="submitButton" id="{{name}}_selected" type="submit" value="{{eventid}}+{{name}}" name="selected" data-toggle="modal" data-target="#name">{{name}}</button>
-					<div class="modal fade" id= "name" tabindex="-1" role="dialog" aria-labelledby="namelabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-					    		<div class="modal-header">
-					    			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					        		<h4 class="modal-title" id="namelabel">Details about this gift</h4>
-					      		</div>
-					      		<div class="modal-body">
-						        	<div class="idea">
-										<img src="{{image}}" class="image">
-										<h3>{{price}} </h3>
-										<p><center>{{description}}</center></p>
-										<form action="/ideaundo" method="get">
-											<button type="submit" class="submitButton" id="bought" name="bought" value="{{eventid}}+{{name}}">buy</button>
-										</form>
-										<hr>
-										<form action="/eventpage" method="get">
-											<button type="button" class="cancelButton" data-dismiss="modal" value="{{eventid}}" id="eventcode" name="eventcode">close</button>
-										</form>
-									</div>
+				<br>
+				<button id="{{compName}}_idea_modal" class="submitButton" type data-toggle="modal" data-target="#{{compName}}_modal">{{name}}</button>
+
+				<div class="modal fade" id="{{compName}}_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  			<div class="modal-dialog">
+		    			<div class="modal-content">
+		      				<div class="modal-header">
+		        				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        				<h4 class="modal-title" id="myModalLabel"><b>{{name}}</b></h4>
+		      				</div>
+		      				<div class="modal-body">
+		      					<div class="idea">
+									<img src="{{image}}" class="image">
+									<h3>{{price}}</h3>
+									<p><center>{{description}}</center></p>
+									<button type="submit" class="submitButton" id="{{name}}_bought" name="bought" onclick="claimClicked(this.id, '{{bought}}_{{name}}_image', '{{compName}}_idea_modal', '{{compName}}_modal')">claim</button>
 								</div>
-					      	</div>
-					    </div>
-					</div>
-				</form>-->
+							</div>
+		      				<div class="modal-footer">
+		      					<button type="button" class="cancelButton" value="{{eventid}}" id="eventcode" name="eventcode" data-dismiss= "modal">close</button>
+      		  				</div>
+    					</div>
+  		  			</div>
+				</div>
+				<div class="modal fade" id="{{compName}}_bought_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  			<div class="modal-dialog">
+		    			<div class="modal-content">
+		      				<div class="modal-header">
+		        				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        				<h4 class="modal-title" id="myModalLabel"><b>{{name}}</b></h4>
+		      				</div>
+		      				<div class="modal-body">
+		      					<div class="idea">
+									<img src="{{image}}" class="image">
+									<h3>{{price}}</h3>
+									<p><center>{{description}}</center></p>
+									<button type="submit" class="ideaBoughtButton" id="{{name}}_bought" name="bought" disabled="true">claimed</button>
+								</div>
+							</div>
+		      				<div class="modal-footer">
+		      					<button type="button" class="cancelButton" value="{{eventid}}" id="eventcode" name="eventcode" data-dismiss= "modal">close</button>
+      		  				</div>
+    					</div>
+  		  			</div>
+				</div>
 			</div>
 			<hr>
 		{{/each}}

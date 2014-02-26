@@ -34,8 +34,7 @@ function modifyBought(e){
 
 		//get the {{bought}} value
 		var bought = imageid.split('_')[0];
-		var voteDirection = imageid.split('_')[1];
-		console.log(voteDirection);
+		var name = imageid.split('_')[1];
 
 		// check if bought
 		if (bought == "true"){
@@ -49,8 +48,8 @@ function modifyBought(e){
 
 			// sets the destination of the form so that it goes to ideabought
 			// instead of idea
-			var formid = $(this).closest('.idea').find('.form').attr('id');
-			document.getElementById(formid).action = "/ideabought";
+			$("#" + buttonid).attr('data-target', '#'+name+'_bought_modal');
+			//document.getElementById(formid).action = "/ideabought";
 		}
 	}
 }
@@ -62,19 +61,33 @@ function modifyVoteUp(buttonid){
 		console.log(buttonid);
 		var form = document.getElementById(buttonid).parentElement.innerHTML;
 		var form_beg = form.split("</button>");
-		console.log("FORM >");
-		console.log(form_beg[0]);
-		console.log(form_beg[1]);
 		var vote = parseInt(form_beg[1].split("<")[0]) + 1;
-		console.log("FORM <");
-		console.log(form_beg[1].split("<")[1]);
-		console.log(vote);
 		document.getElementById(buttonid).parentElement.innerHTML = form_beg[0] + "</button>" + vote + " <" + form_beg[1].split("<")[1];
 		document.getElementById(buttonid).className = "ideaUpvotedButton";
-		document.getElementById(buttonid).disabled = "true";
+		document.getElementById(buttonid).onclick=function(){ undoVoteUp(buttonid); };
+		buttonid = document.getElementById(buttonid).parentElement.children[1].id;
+		document.getElementById(buttonid).disabled = true;
+		buttonid = document.getElementById(buttonid).parentElement.children[0].id;
+		console.log(buttonid);
+	}
+}
+
+function undoVoteUp(buttonid){
+	event.preventDefault();		
+	console.log("MODIFY VOTE UP");
+	if(typeof buttonid != 'undefined'){
+		console.log(buttonid);
+		var form = document.getElementById(buttonid).parentElement.innerHTML;
+		var form_beg = form.split("</button>");
+		var vote = parseInt(form_beg[1].split("<")[0]) - 1;
+		document.getElementById(buttonid).parentElement.innerHTML = form_beg[0] + "</button>" + vote + " <" + form_beg[1].split("<")[1];
+		document.getElementById(buttonid).className = "upvoteButton";
+		document.getElementById(buttonid).disabled = false;
+		document.getElementById(buttonid).onclick=function(){ modifyVoteUp(buttonid); };
 		buttonid = document.getElementById(buttonid).parentElement.children[1].id;
 		console.log(buttonid);
-		document.getElementById(buttonid).disabled = "true";
+		document.getElementById(buttonid).disabled = false;
+		buttonid = document.getElementById(buttonid).parentElement.children[0].id;
 	}
 }
 
@@ -85,17 +98,56 @@ function modifyVoteDown(buttonid){
 		console.log(buttonid);
 		var form = document.getElementById(buttonid).parentElement.innerHTML;
 		var form_beg = form.split("</button>");
-		console.log("FORM >");
-		console.log(form_beg[0]);
-		console.log(form_beg[1]);
 		var vote = parseInt(form_beg[1].split("<")[0]) - 1;
-		console.log("FORM <");
-		console.log(form_beg[1].split("<")[1]);
-		console.log(vote);
 		document.getElementById(buttonid).parentElement.innerHTML = form_beg[0] + "</button>" + vote + " <" + form_beg[1].split("<")[1];
 		document.getElementById(buttonid).className = "ideaDownvotedButton";
-		document.getElementById(buttonid).disabled = "true";
+		document.getElementById(buttonid).onclick=function(){ undoVoteDown(buttonid); };
 		buttonid = document.getElementById(buttonid).parentElement.children[0].id;
-		document.getElementById(buttonid).disabled = "true";
+		document.getElementById(buttonid).disabled = true;
+		buttonid = document.getElementById(buttonid).parentElement.children[1].id;
+		console.log(buttonid);
 	}
+}
+
+function undoVoteDown(buttonid){
+	event.preventDefault();		
+	console.log("MODIFY VOTE UP");
+	if(typeof buttonid != 'undefined'){
+		console.log(buttonid);
+		var form = document.getElementById(buttonid).parentElement.innerHTML;
+		var form_beg = form.split("</button>");
+		var vote = parseInt(form_beg[1].split("<")[0]) + 1;
+		document.getElementById(buttonid).parentElement.innerHTML = form_beg[0] + "</button>" + vote + " <" + form_beg[1].split("<")[1];
+		document.getElementById(buttonid).className = "downvoteButton";
+		document.getElementById(buttonid).disabled = false;
+		document.getElementById(buttonid).onclick=function(){ modifyVoteDown(buttonid); };
+		buttonid = document.getElementById(buttonid).parentElement.children[0].id;
+		document.getElementById(buttonid).disabled = false;
+		buttonid = document.getElementById(buttonid).parentElement.children[1].id;
+	}
+}
+
+function claimClicked(buttonid, imageid, ideaid, modal){
+	event.preventDefault();	
+	document.getElementById(buttonid).innerHTML="undo";
+	document.getElementById(buttonid).onclick=function() { undoClicked(this.id, imageid, ideaid, modal); };
+	document.getElementById(buttonid).value="claimed";
+	document.getElementById(imageid).className = "imagebought";	
+	document.getElementById(ideaid).className = "ideaBoughtButton";
+	var bought = modal.split('_')[0] + '_bought_' + modal.split('_')[1];
+	console.log(bought);
+	console.log(ideaid);
+	$("#" + ideaid).attr('data-target', '#'+ bought);
+}
+
+function undoClicked(buttonid, imageid, ideaid, modal){
+	event.preventDefault();	
+	document.getElementById(buttonid).innerHTML="claim";
+	document.getElementById(buttonid).onclick=function() { claimClicked(this.id, imageid, ideaid, modal); };
+	document.getElementById(buttonid).value="";
+	document.getElementById(imageid).className = "image";
+	document.getElementById(ideaid).className = "submitButton";
+	console.log("modal");
+	console.log(modal);
+	$("#" + ideaid).attr('data-target', '#'+ modal);
 }

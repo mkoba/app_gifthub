@@ -9,6 +9,7 @@
 				{
 					"eventid": "31415",
 					"name": "Laptop",
+					"compName": "Laptop",
 					"price": "$$$$",
 					"description": "Mari needs a laptop for school",
 					"image": "images/laptop.png",
@@ -19,6 +20,7 @@
 				{
 					"eventid": "31415",
 					"name": "Wine",
+					"compName": "Wine",
 					"price": "$",
 					"description": "She likes sweet wines!",
 					"image": "images/wine.png",
@@ -29,6 +31,7 @@
 				{
 					"eventid": "31415",
 					"name": "Audi R8",
+					"compName": "AudiR8",
 					"price": "$$$$",
 					"description": "She likes to street race!",
 					"image": "http://1.bp.blogspot.com/-jRKzY3xlENk/UI1pANNv4iI/AAAAAAAAIKU/-jPF8ysL6Ik/s640/Audi+R8+GT850+by+Prior+Design.jpg",
@@ -39,6 +42,7 @@
 				{
 					"eventid": "31415",
 					"name": "nexus 5",
+					"compName": "nexus5",
 					"price": "$$$",
 					"description": "She secretly wants something larger than iphones",
 					"image": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/11/1384161811385/755f28ce-0f3b-4f69-8a57-d5d87d57df2c-460x276.jpeg",
@@ -49,6 +53,7 @@
 				{
 					"eventid": "31415",
 					"name": "tina action figures",
+					"compName": "tinaactionfigures",
 					"price": "$",
 					"description": "She loves watching Bob's Burgers",
 					"image": "http://images3.wikia.nocookie.net/__cb20130113192211/bobsburgerpedia/images/6/6e/Tina_render.png",
@@ -68,6 +73,7 @@
 				{
 					"eventid": "25589",
 					"name": "Wine",
+					"compName": "Wine",
 					"price": "$",
 					"description": "A good bottle of wine :)",
 					"image": "images/wine.png",
@@ -78,6 +84,7 @@
 				{
 					"eventid": "25589",
 					"name": "Trip to Barcelona",
+					"compName": "TriptoBarcelona",
 					"price": "$$$$",
 					"description": "Vacay!! ;)",
 					"image": "http://iaufrance.org/Content/Uploads/CMS/Images/barcelona-spain.jpg",
@@ -88,6 +95,7 @@
 				{
 					"eventid": "25589",
 					"name": "PB Bar & Grill Night",
+					"compName": "PBBar&GrillNight",
 					"price": "$$",
 					"description": "Fun Night :D",
 					"image": "http://www.happyhourcard.com/places/image_10_47_58.jpg",
@@ -107,6 +115,7 @@
 			{
 				"eventid": "84573",
 				"name": "Laptop",
+				"compName": "Laptop",
 				"price": "$$$$",
 				"description": "Macs > PC",
 				"image": "images/laptop.png",
@@ -117,6 +126,7 @@
 			{
 				"eventid": "84573",
 				"name": "Tesla",
+				"compName": "Tesla",
 				"price": "$$$$",
 				"description": "See title",
 				"image": "http://cloudfront.mediamatters.org/static/images/countyfair/teslamodels-autoblog53013.jpg",

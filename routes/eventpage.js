@@ -10,9 +10,15 @@ exports.view = function(req, res){
 		if(req.query.image != ''){
 			imageURL = req.query.image;
 		}
+		var arr = req.query.name.split(" ");
+		var compName;
+		for (i in arr){
+			compName += arr[i];
+		}
 		var newIdea = {
 					"eventid": currentEvent,
 					"name": req.query.name,
+					"compName": compName,
 					"price": req.query.price,
 					"description": req.query.description,
 					"image": imageURL,
