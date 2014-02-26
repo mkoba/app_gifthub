@@ -49,7 +49,33 @@
 
 		<hr>
 		{{#each idea}}
-			<div class="idea" id="{{name}}">
+			<div class="idea" id="{{name}}" class="">
+				<!-- Leon's Changes
+				<div style="clear: both;">
+				<div id="div1">
+				<form action="/idea" method="get" id="{{name}}_form" class="form">
+					<input type="image" src="{{image}}" id="{{name}}_selected" type="submit" class="eventpageimage" value="{{eventid}}+{{name}}" name="selected"><h4>{{name}}</h4></input>
+				</form>
+				</div>
+				<div id="div2"><h1>
+						<button id="{{name}}_upvote" type="button" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote" onClick="modifyVoteUp(this.id)"></button>
+						{{vote}}
+						<button id="{{name}}_downvote" type="button" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onClick="modifyVoteDown(this.id)"></button>
+				</h1></div>
+				</div>
+				</div>
+				</hr>
+				-->
+				<!--Mari's Attempt to Merge
+				<div style="clear: both;">
+				<div id="div1">
+					<input type="image" src="{{image}}" id="{{compName}}_idea_modal" type="submit" class="eventpageimage" value="{{eventid}}+{{name}}" name="selected" type data-toggle="modal" data-target="#{{compName}}_modal"><h4>{{name}}</h4></input>
+				</div>
+				<div id="div2"><h1>
+						<button id="{{name}}_upvote" type="button" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote" onClick="modifyVoteUp(this.id)"></button>
+						{{vote}}
+						<button id="{{name}}_downvote" type="button" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onClick="modifyVoteDown(this.id)"></button>
+				</h1></div>-->
 				<img src="{{image}}" class="image" id="{{bought}}_{{name}}_image">
 				<br>
 				<h1>
@@ -59,7 +85,7 @@
 					</form>
 				</h1>
 				<br>
-				<button id="{{compName}}_idea_modal" class="submitButton" type data-toggle="modal" data-target="#{{compName}}_modal">{{name}}</button>
+				<button id="{{compName}}_idea_modal" class="submitButton" type data-toggle="modal" data-target="#{{compName}}_modal">{{name}}</button>-->
 
 				<div class="modal fade" id="{{compName}}_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  			<div class="modal-dialog">
@@ -103,6 +129,7 @@
     					</div>
   		  			</div>
 				</div>
+			</div>
 			</div>
 			<hr>
 		{{/each}}
