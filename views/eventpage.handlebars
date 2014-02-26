@@ -50,15 +50,23 @@
 		<hr>
 		{{#each idea}}
 			<div class="idea" id="{{name}}">
-				<img src="{{image}}" class="image" id="{{bought}}_{{voteDir}}_{{name}}_image">
-				<h1>
+				<div style="clear: both;">
+				<div id="div1">
+				<form action="/idea" method="get" id="{{name}}_form" class="form">
+					<input type="image" src="{{image}}" id="{{name}}_selected" type="submit" class="eventpageimage" value="{{eventid}}+{{name}}" name="selected"><h4>{{name}}</h4></input>
+				</form>
+				</div>	
+				<!--img src="{{image}}" class="image" id="{{bought}}_{{voteDir}}_{{name}}_image"-->
+				<div id="div2"><h1>
 						<button id="{{name}}_upvote" type="button" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote" onClick="modifyVoteUp(this.id)"></button>
 						{{vote}}
 						<button id="{{name}}_downvote" type="button" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onClick="modifyVoteDown(this.id)"></button>
-				</h1>
-				<form action="/idea" method="get" id="{{name}}_form" class="form">
+				</h1></div>
+				</div>
+				<!--form action="/idea" method="get" id="{{name}}_form" class="form">
 					<button id="{{name}}_selected" type="submit" class="submitButton" value="{{eventid}}+{{name}}" name="selected">{{name}}</button>
-				</form>
+				</form-->
+
 				<!-- MODAL
 				<form action="/idea" method="get" id="{{name}}_form" class="form">
 					<button class="submitButton" id="{{name}}_selected" type="submit" value="{{eventid}}+{{name}}" name="selected" data-toggle="modal" data-target="#name">{{name}}</button>
@@ -75,7 +83,7 @@
 										<h3>{{price}} </h3>
 										<p><center>{{description}}</center></p>
 										<form action="/ideaundo" method="get">
-											<button type="submit" class="submitButton" id="bought" name="bought" value="{{eventid}}+{{name}}">buy</button>
+											<button type="submit" class="submitButton" id="bought" name="bought" value="{{eventid}}+{{name}}">claim idea</button>
 										</form>
 										<hr>
 										<form action="/eventpage" method="get">
