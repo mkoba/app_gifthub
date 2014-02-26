@@ -52,21 +52,50 @@ function modifyBought(e){
 			var formid = $(this).closest('.idea').find('.form').attr('id');
 			document.getElementById(formid).action = "/ideabought";
 		}
-		
-		if (voteDirection == "up"){
-			var buttonid = $(this).closest('.idea').find('.upvoteButton').attr('id');
-			document.getElementById(buttonid).className = "ideaUpvotedButton";
-			document.getElementById(buttonid).disabled = "true";
-			buttonid = $(this).closest('.idea').find('.downvoteButton').attr('id');
-			document.getElementById(buttonid).disabled = "true";
+	}
+}
 
-		}
-		else if (voteDirection == "down"){
-			var buttonid = $(this).closest('.idea').find('.downvoteButton').attr('id');
-			document.getElementById(buttonid).className = "ideaDownvotedButton";
-			document.getElementById(buttonid).disabled = "true";
-			buttonid = $(this).closest('.idea').find('.upvoteButton').attr('id');
-			document.getElementById(buttonid).disabled = "true";
-		}
+function modifyVoteUp(buttonid){
+	event.preventDefault();		
+	console.log("MODIFY VOTE UP");
+	if(typeof buttonid != 'undefined'){
+		console.log(buttonid);
+		var form = document.getElementById(buttonid).parentElement.innerHTML;
+		var form_beg = form.split("</button>");
+		console.log("FORM >");
+		console.log(form_beg[0]);
+		console.log(form_beg[1]);
+		var vote = parseInt(form_beg[1].split("<")[0]) + 1;
+		console.log("FORM <");
+		console.log(form_beg[1].split("<")[1]);
+		console.log(vote);
+		document.getElementById(buttonid).parentElement.innerHTML = form_beg[0] + "</button>" + vote + " <" + form_beg[1].split("<")[1];
+		document.getElementById(buttonid).className = "ideaUpvotedButton";
+		document.getElementById(buttonid).disabled = "true";
+		buttonid = document.getElementById(buttonid).parentElement.children[1].id;
+		console.log(buttonid);
+		document.getElementById(buttonid).disabled = "true";
+	}
+}
+
+function modifyVoteDown(buttonid){
+	event.preventDefault();		
+	console.log("MODIFY VOTE DOWN");
+	if(typeof buttonid != 'undefined'){
+		console.log(buttonid);
+		var form = document.getElementById(buttonid).parentElement.innerHTML;
+		var form_beg = form.split("</button>");
+		console.log("FORM >");
+		console.log(form_beg[0]);
+		console.log(form_beg[1]);
+		var vote = parseInt(form_beg[1].split("<")[0]) - 1;
+		console.log("FORM <");
+		console.log(form_beg[1].split("<")[1]);
+		console.log(vote);
+		document.getElementById(buttonid).parentElement.innerHTML = form_beg[0] + "</button>" + vote + " <" + form_beg[1].split("<")[1];
+		document.getElementById(buttonid).className = "ideaDownvotedButton";
+		document.getElementById(buttonid).disabled = "true";
+		buttonid = document.getElementById(buttonid).parentElement.children[0].id;
+		document.getElementById(buttonid).disabled = "true";
 	}
 }

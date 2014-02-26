@@ -51,13 +51,10 @@
 		{{#each idea}}
 			<div class="idea" id="{{name}}">
 				<img src="{{image}}" class="image" id="{{bought}}_{{voteDir}}_{{name}}_image">
-				<br>
 				<h1>
-					<form action="/eventpage" method="get" id="form_vote">
-						<button id="{{name}}_upvote" type="submit" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote"></button>
+						<button id="{{name}}_upvote" type="button" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote" onClick="modifyVoteUp(this.id)"></button>
 						{{vote}}
-						<button id="{{name}}_downvote" type="submit" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote"></button>
-					</form>
+						<button id="{{name}}_downvote" type="button" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onClick="modifyVoteDown(this.id)"></button>
 				</h1>
 				<form action="/idea" method="get" id="{{name}}_form" class="form">
 					<button id="{{name}}_selected" type="submit" class="submitButton" value="{{eventid}}+{{name}}" name="selected">{{name}}</button>
