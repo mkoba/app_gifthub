@@ -1,9 +1,24 @@
 var count = 0; //for debugging ignore
+var boughtCount = 0;
+var bought = new Array();
+var upVoteCount = 0;
+var upvote = new Array();
+var downVoteCount = 0;
+var downvote = new Array();
 
 // called when page is loaded (i believe)
 $(document).ready(function() {
 	initializePage();
-})
+	for (i in upvote){
+		$.modifyVoteUp(upvote[i]);
+	}
+	for (i in downvote){
+		$.modifyVoteDown(downvote[i]);
+	}
+	for (i in bought){
+		$.markBought(bought[i]);
+	}
+});
 
 /*
  * Function that is called when the document is ready.
@@ -20,6 +35,14 @@ function initializePage() {
 	console.log(image.length);
 	// for each image call the modify bought method
 	$.each(image, modifyBought);
+}
+
+function markBought(arr){
+	var imageid = arr[0];
+	var buttonid = arr[1];
+	document.getElementById(imageid).className = "imagebought";	
+	document.getElementById(buttonid).className = "ideaBoughtButton";
+	$("#" + buttonid).attr('data-target', '#'+name+'_bought_modal');
 }
 
 // function to modify the appearance based on data which i pass by names of elements
@@ -69,6 +92,10 @@ function modifyVoteUp(buttonid){
 		document.getElementById(buttonid).disabled = true;
 		buttonid = document.getElementById(buttonid).parentElement.children[0].id;
 		console.log(buttonid);
+		upvote[upVoteCount] = buttonid;
+		upVoteCount++;
+		console.log(upvote);
+		document.getElementById("changes").value+="+up_"+buttonid.split('_')[0];
 	}
 }
 
@@ -88,6 +115,8 @@ function undoVoteUp(buttonid){
 		console.log(buttonid);
 		document.getElementById(buttonid).disabled = false;
 		buttonid = document.getElementById(buttonid).parentElement.children[0].id;
+		upvote.splice(upvote.indexOf(buttonid), 1);
+		document.getElementById("changes").value-="+up_"+buttonid.split('_')[0];
 	}
 }
 
@@ -106,6 +135,9 @@ function modifyVoteDown(buttonid){
 		document.getElementById(buttonid).disabled = true;
 		buttonid = document.getElementById(buttonid).parentElement.children[1].id;
 		console.log(buttonid);
+		downvote[downVoteCount] = buttonid;
+		downVoteCount++;
+		document.getElementById("changes").value+="+down_"+buttonid.split('_')[0];
 	}
 }
 
@@ -124,6 +156,8 @@ function undoVoteDown(buttonid){
 		buttonid = document.getElementById(buttonid).parentElement.children[0].id;
 		document.getElementById(buttonid).disabled = false;
 		buttonid = document.getElementById(buttonid).parentElement.children[1].id;
+		downvote.splice(downvote.indexOf(buttonid), 1);
+		document.getElementById("changes").value-="+down_"+buttonid.split('_')[0];
 	}
 }
 
@@ -138,6 +172,9 @@ function claimClicked(buttonid, imageid, ideaid, modal){
 	console.log(bought);
 	console.log(ideaid);
 	$("#" + ideaid).attr('data-target', '#'+ bought);
+	bought[boughtCount] = new Array(imageid, ideaid);
+	boughtCount++;
+	document.getElementById("changes").value+="+bought_"+buttonid.split('_')[0];
 }
 
 function undoClicked(buttonid, imageid, ideaid, modal){
@@ -150,4 +187,7 @@ function undoClicked(buttonid, imageid, ideaid, modal){
 	console.log("modal");
 	console.log(modal);
 	$("#" + ideaid).attr('data-target', '#'+ modal);
+	var tmp = new Array(imageid, ideaid);
+	bought.splice(bought.indexOf(tmp, 1));
+	document.getElementById("changes").value-="+bought_"+buttonid.split('_')[0];
 }

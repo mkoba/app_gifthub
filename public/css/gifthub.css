@@ -315,3 +315,11 @@ textarea.input-xlg {
     float:right;
     height:400px;
 }
+
+.eventpageimage{
+    display: block;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    max-width: 200px;
+    max-height: 200px;
+}

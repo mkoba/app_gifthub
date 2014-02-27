@@ -34,6 +34,46 @@ exports.view = function(req, res){
 		console.log(e.idea);
 		e.idea.push(newIdea);
 		var idealist = e.idea;
+
+		//Get changes to data
+		if (typeof changes != 'undefined'){
+			var changes = req.query.changes;
+			var arr = changes.split('+').slice(1);
+			console.log(arr);
+			for (i in arr){
+				var current_arr = arr[i].split('_');
+				console.log(current_arr);
+				if (current_arr[0] == "up" || current_arr[0] == "down"){
+					for (k in idealist){
+						var idea = idealist[k];
+						if (idea.name == current_arr[1]){
+							console.log("IDEA FOUND");
+							var tally = parseInt(idea.vote);
+							if (current_arr[0] == "up"){
+								tally += 1;
+							}
+							else {
+								tally -= 1;
+							}
+							idea.vote = tally;
+							console.log(idea.vote);
+							break;
+						}
+					}
+				}
+				else if (current_arr[0] == "bought"){
+					for (k in idealist){
+						var idea = idealist[k];
+						if (idea.name == current_arr[1]){
+							console.log("IDEA FOUND");
+							idea.bought = "true";
+							console.log(idea.bought);
+							break;
+						}
+					}
+				}
+			}
+		}
 		idealist = sort(idealist);
 		data[code].idea = idealist;
 
