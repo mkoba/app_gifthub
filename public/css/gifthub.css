@@ -277,7 +277,9 @@ textarea.input-xlg {
     min-height: 55px;
     min-width: 35px;
     padding-top: 3%;
-    padding-left: 3%;
+    position: absolute;
+    left: 0px;
+    top: 100px;
     border:none;
 }
 
@@ -287,7 +289,8 @@ textarea.input-xlg {
     min-height: 55px;
     min-width: 35px;
     padding-top: 3%;
-    padding-left: 3%;
+    position: absolute;
+    top: 100px;
     border:none;
 }
 
@@ -323,6 +326,7 @@ textarea.input-xlg {
     float:right;
     height:400px;
     text-align: center;
+    position: relative;
 }
 
 .eventpageimage{
@@ -333,6 +337,18 @@ textarea.input-xlg {
     max-height: 200px;
 }
 
+.vote{
+    font-size: large;
+    padding-left: 10px;
+    position: absolute;
+}
+
+.ideaBox{
+    clear: both;
+    border: 2px #bf3030;
+    border-radius: 5px;
+}
+
 .imagebought{
     display: block;
     max-width: 200px;
@@ -341,4 +357,10 @@ textarea.input-xlg {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
+}
+
+.ideaLabel{
+    font-size: medium;
+    font-weight: bold;
+    text-transform: lowercase;
 }
