@@ -66,11 +66,12 @@ function modifyBought(e){
 
 			// set the class of the button with the ideas name to ideaBoughtButton
 			// which is grey
-			var buttonid = $(this).closest('.idea').find('.submitButton').attr('id');
-			document.getElementById(buttonid).className = "ideaBoughtButton";
+			var label = name+"_label";
+			document.getElementById(label).className = "ideaBoughtLabel";
 
 			// sets the destination of the form so that it goes to ideabought
 			// instead of idea
+			var buttonid = $(this).arr('id');
 			$("#" + buttonid).attr('data-target', '#'+name+'_bought_modal');
 			//document.getElementById(formid).action = "/ideabought";
 		}
@@ -169,7 +170,9 @@ function claimClicked(buttonid, imageid, ideaid, modal){
 	document.getElementById(buttonid).innerHTML="undo";
 	document.getElementById(buttonid).onclick=function() { undoClicked(this.id, imageid, ideaid, modal); };
 	document.getElementById(buttonid).value="claimed";
-	document.getElementById(ideaid).className = "imagebought";	
+	document.getElementById(ideaid).className = "imagebought";
+	console.log(modal.split('_')[0]+"_label");
+	document.getElementById(modal.split('_')[0]+"_label").className = "ideaBoughtLabel";	
 	//document.getElementById(ideaid).className = "ideaBoughtButton";
 	var bought = modal.split('_')[0] + '_bought_' + modal.split('_')[1];
 	console.log(bought);
@@ -187,6 +190,7 @@ function undoClicked(buttonid, imageid, ideaid, modal){
 	document.getElementById(buttonid).value="";
 	document.getElementById(imageid).className = "image";
 	document.getElementById(ideaid).className = "submitButton";
+	document.getElementById(modal.split('_')[0]+"_label").className = "ideaLabel";
 	console.log("modal");
 	console.log(modal);
 	$("#" + ideaid).attr('data-target', '#'+ modal);
