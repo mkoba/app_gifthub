@@ -37,14 +37,6 @@ function initializePage() {
 	$.each(image, modifyBought);
 }
 
-function markBought(arr){
-	var imageid = arr[0];
-	var buttonid = arr[1];
-	document.getElementById(imageid).className = "imagebought";	
-	document.getElementById(buttonid).className = "ideaBoughtButton";
-	$("#" + buttonid).attr('data-target', '#'+name+'_bought_modal');
-}
-
 // function to modify the appearance based on data which i pass by names of elements
 function modifyBought(e){
 	event.preventDefault();
@@ -68,10 +60,16 @@ function modifyBought(e){
 			// which is grey
 			var label = name+"_label";
 			document.getElementById(label).className = "ideaBoughtLabel";
+			$("#" + label).attr('data-target', '#'+name+'_bought_modal');
 
+			var div = name+"_div";
+			document.getElementById(div).className = "ideaBoughtBox";
+			
 			// sets the destination of the form so that it goes to ideabought
 			// instead of idea
-			var buttonid = $(this).arr('id');
+			var buttonid = $(this).attr('id');
+			console.log("buttonid");
+			console.log(buttonid);
 			$("#" + buttonid).attr('data-target', '#'+name+'_bought_modal');
 			//document.getElementById(formid).action = "/ideabought";
 		}
@@ -170,17 +168,20 @@ function claimClicked(buttonid, imageid, ideaid, modal){
 	document.getElementById(buttonid).innerHTML="undo";
 	document.getElementById(buttonid).onclick=function() { undoClicked(this.id, imageid, ideaid, modal); };
 	document.getElementById(buttonid).value="claimed";
-	document.getElementById(ideaid).className = "imagebought";
+	document.getElementById(ideaid).className = "imagebought";		
 	console.log(modal.split('_')[0]+"_label");
 	document.getElementById(modal.split('_')[0]+"_label").className = "ideaBoughtLabel";	
-	//document.getElementById(ideaid).className = "ideaBoughtButton";
 	var bought = modal.split('_')[0] + '_bought_' + modal.split('_')[1];
+	$("#" + modal.split('_')[0]+"_label").attr('data-target', '#'+ bought);
+	//document.getElementById(ideaid).className = "ideaBoughtButton";
 	console.log(bought);
 	console.log(ideaid);
 	$("#" + ideaid).attr('data-target', '#'+ bought);
 	bought[boughtCount] = new Array(imageid, ideaid);
 	boughtCount++;
 	document.getElementById("changes").value+="+bought_"+buttonid.split('_')[0];
+	var div = modal.split('_')[0] + "_div";
+	document.getElementById(div).className = "ideaBoughtBox";
 }
 
 function undoClicked(buttonid, imageid, ideaid, modal){
@@ -188,13 +189,15 @@ function undoClicked(buttonid, imageid, ideaid, modal){
 	document.getElementById(buttonid).innerHTML="claim";
 	document.getElementById(buttonid).onclick=function() { claimClicked(this.id, imageid, ideaid, modal); };
 	document.getElementById(buttonid).value="";
-	document.getElementById(imageid).className = "image";
-	document.getElementById(ideaid).className = "submitButton";
+	document.getElementById(ideaid).className = "eventpageimage";
 	document.getElementById(modal.split('_')[0]+"_label").className = "ideaLabel";
 	console.log("modal");
 	console.log(modal);
 	$("#" + ideaid).attr('data-target', '#'+ modal);
+	$("#" + modal.split('_')[0]+"_label").attr('data-target', '#'+ modal);
 	var tmp = new Array(imageid, ideaid);
 	bought.splice(bought.indexOf(tmp, 1));
 	document.getElementById("changes").value-="+bought_"+buttonid.split('_')[0];
+	var div = modal.split('_')[0] + "_div";
+	document.getElementById(div).className = "ideaBox";
 }

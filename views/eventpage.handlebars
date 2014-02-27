@@ -64,18 +64,20 @@
 					</h1></div>
 				</div>-->
 				<!--Mari's Attempt to Merge-->
-				<div style="clear: both;">
-				<div id="div1">
-					<input type="image" src="{{image}}" id="{{compName}}_{{bought}}_idea_modal" type="submit" class="eventpageimage" value="{{eventid}}+{{name}}" name="selected" type data-toggle="modal" data-target="#{{compName}}_modal"><h5 id="{{compName}}_label" class="ideaLabel">{{name}}</h5></input>
-				</div>
-				<div id="div2">
-						<h1>
-						<button id="{{name}}_upvote" type="button" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote" onClick="modifyVoteUp(this.id)"></button>
-						<p class="vote">{{vote}}</p>
-						<button id="{{name}}_downvote" type="button" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onClick="modifyVoteDown(this.id)"></button>
-						</h1>
-				</div>
-				<hr>
+				<div class="ideaBox" id="{{compName}}_div">
+					<div id="div1">
+						<input type="image" src="{{image}}" id="{{compName}}_{{bought}}_idea_modal" type="submit" class="eventpageimage" value="{{eventid}}+{{name}}" name="selected" type data-toggle="modal" data-target="#{{compName}}_modal"></input>
+					</div>
+					<div id="div2">
+							<h1>
+							<button id="{{name}}_upvote" type="button" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote" onClick="modifyVoteUp(this.id)"></button>
+							<p class="vote">{{vote}}</p>
+							<button id="{{name}}_downvote" type="button" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onClick="modifyVoteDown(this.id)"></button>
+							</h1>
+					</div>
+					<div id="div3">
+						<h5 id="{{compName}}_label" class="ideaLabel" type data-toggle="modal" data-target="#{{compName}}_modal">{{name}}</h5>
+					</div>
 				<!--
 				<img src="{{image}}" class="image" id="{{bought}}_{{name}}_image">
 				<br>
@@ -132,7 +134,7 @@
 				</div>
 			</div>
 			</div>
-			<!-- <hr> -->
+			<hr>
 		{{/each}}
 
 
