@@ -63,16 +63,18 @@
 							<button id="{{name}}_downvote" type="button" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onClick="modifyVoteDown(this.id)"></button>
 					</h1></div>
 				</div>-->
-				<!--Mari's Attempt to Merge
+				<!--Mari's Attempt to Merge-->
 				<div style="clear: both;">
 				<div id="div1">
-					<input type="image" src="{{image}}" id="{{compName}}_idea_modal" type="submit" class="eventpageimage" value="{{eventid}}+{{name}}" name="selected" type data-toggle="modal" data-target="#{{compName}}_modal"><h4>{{name}}</h4></input>
+					<input type="image" src="{{image}}" id="{{compName}}_{{bought}}_idea_modal" type="submit" class="eventpageimage" value="{{eventid}}+{{name}}" name="selected" type data-toggle="modal" data-target="#{{compName}}_modal"><h4>{{name}}</h4></input>
 				</div>
 				<div id="div2"><h1>
 						<button id="{{name}}_upvote" type="button" class="upvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="upvote" onClick="modifyVoteUp(this.id)"></button>
 						{{vote}}
 						<button id="{{name}}_downvote" type="button" class="downvoteButton" value="{{eventid}}+{{name}}+{{vote}}" name="downvote" onClick="modifyVoteDown(this.id)"></button>
-				</h1></div>-->
+				</h1></div>
+				<hr>
+				<!--
 				<img src="{{image}}" class="image" id="{{bought}}_{{name}}_image">
 				<br>
 				<h1>
@@ -83,7 +85,7 @@
 				</h1>
 				<br>
 				<button id="{{compName}}_idea_modal" class="submitButton" type data-toggle="modal" data-target="#{{compName}}_modal">{{name}}</button>
-
+				-->
 				<div class="modal fade" id="{{compName}}_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  			<div class="modal-dialog">
 		    			<div class="modal-content">
@@ -96,7 +98,7 @@
 									<img src="{{image}}" class="image">
 									<h3>{{price}}</h3>
 									<p><center>{{description}}</center></p>
-									<button type="submit" class="submitButton" id="{{name}}_bought" name="bought" onclick="claimClicked(this.id, '{{bought}}_{{name}}_image', '{{compName}}_idea_modal', '{{compName}}_modal')">claim</button>
+									<button type="submit" class="submitButton" id="{{name}}_bought" name="bought" onclick="claimClicked(this.id, '{{bought}}_{{name}}_image', '{{compName}}_{{bought}}_idea_modal', '{{compName}}_modal')">claim</button>
 								</div>
 							</div>
 		      				<div class="modal-footer">
@@ -128,7 +130,7 @@
 				</div>
 			</div>
 			</div>
-			<hr>
+			<!-- <hr> -->
 		{{/each}}
 
 

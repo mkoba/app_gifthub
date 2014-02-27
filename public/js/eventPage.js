@@ -30,8 +30,8 @@ function initializePage() {
 	count = count + 1;
 
 	//gets an array of img elements (elements that use the tag <img...>)
-	var image = $("img");
-	image = image.slice(1);
+	var image = $(".eventpageimage");
+	console.log(image);
 	console.log(image.length);
 	// for each image call the modify bought method
 	$.each(image, modifyBought);
@@ -56,8 +56,8 @@ function modifyBought(e){
 		console.log(imageid);
 
 		//get the {{bought}} value
-		var bought = imageid.split('_')[0];
-		var name = imageid.split('_')[1];
+		var bought = imageid.split('_')[1];
+		var name = imageid.split('_')[0];
 
 		// check if bought
 		if (bought == "true"){
@@ -166,8 +166,8 @@ function claimClicked(buttonid, imageid, ideaid, modal){
 	document.getElementById(buttonid).innerHTML="undo";
 	document.getElementById(buttonid).onclick=function() { undoClicked(this.id, imageid, ideaid, modal); };
 	document.getElementById(buttonid).value="claimed";
-	document.getElementById(imageid).className = "imagebought";	
-	document.getElementById(ideaid).className = "ideaBoughtButton";
+	document.getElementById(ideaid).className = "imagebought";	
+	//document.getElementById(ideaid).className = "ideaBoughtButton";
 	var bought = modal.split('_')[0] + '_bought_' + modal.split('_')[1];
 	console.log(bought);
 	console.log(ideaid);

@@ -323,3 +323,15 @@ textarea.input-xlg {
     max-width: 200px;
     max-height: 200px;
 }
+
+.imagebought{
+    display: block;
+    max-width: 200px;
+    max-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.5;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+}
