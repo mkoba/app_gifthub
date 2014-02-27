@@ -279,7 +279,7 @@ textarea.input-xlg {
     padding-top: 3%;
     position: absolute;
     left: 0px;
-    top: 100px;
+    top: 105px;
     border:none;
 }
 
@@ -291,7 +291,7 @@ textarea.input-xlg {
     padding-top: 3%;
     position: absolute;
     left: 0px;
-    top: 100px;
+    top: 105px;
     border:none;
 }
 
@@ -322,6 +322,10 @@ textarea.input-xlg {
 #div1 {
     float:left;
     height:400px;
+    text-align: center;
+    vertical-align: middle;
+    width: 200px;
+    margin: 0;
 }
 #div2 {
     float:right;
@@ -332,8 +336,8 @@ textarea.input-xlg {
 
 .eventpageimage{
     display: block;
-    /*margin-left: auto;
-    margin-right: auto;*/
+    margin-left: auto;
+    margin-right: auto;
     max-width: 200px;
     max-height: 200px;
 }
