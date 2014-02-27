@@ -290,6 +290,7 @@ textarea.input-xlg {
     min-width: 35px;
     padding-top: 3%;
     position: absolute;
+    left: 0px;
     top: 100px;
     border:none;
 }
