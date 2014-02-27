@@ -254,32 +254,40 @@ textarea.input-xlg {
 .upvoteButton{
     background: url("../images/upvote.png") no-repeat;
     height: 100%;
-    min-height: 100px;
-    min-width: 100px;
+    min-height: 55px;
+    min-width: 35px;
+    padding-top: 3%;
+    padding-right: 3%;
     border:none;
 }
 
 .ideaUpvotedButton{
     background: url("../images/voted-upvote.png")no-repeat;
     height: 100%;
-    min-height: 100px;
-    min-width: 100px;
+    min-height: 55px;
+    min-width: 35px;
+    padding-top: 3%;
+    padding-right: 3%;
     border:none;
 }
 
 .downvoteButton{
     background: url("../images/downvote.png")no-repeat;
     height: 100%;
-    min-height: 100px;
-    min-width: 100px;
+    min-height: 55px;
+    min-width: 35px;
+    padding-top: 3%;
+    padding-left: 3%;
     border:none;
 }
 
 .ideaDownvotedButton{
     background: url("../images/voted-downvote.png")no-repeat;
     height: 100%;
-    min-height: 100px;
-    min-width: 100px;
+    min-height: 55px;
+    min-width: 35px;
+    padding-top: 3%;
+    padding-left: 3%;
     border:none;
 }
 
@@ -314,6 +322,7 @@ textarea.input-xlg {
 #div2 {
     float:right;
     height:400px;
+    text-align: center;
 }
 
 .eventpageimage{
@@ -328,8 +337,6 @@ textarea.input-xlg {
     display: block;
     max-width: 200px;
     max-height: 200px;
-    margin-left: auto;
-    margin-right: auto;
     opacity: 0.5;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
