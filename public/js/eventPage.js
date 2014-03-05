@@ -201,3 +201,11 @@ function undoClicked(buttonid, imageid, ideaid, modal){
 	var div = modal.split('_')[0] + "_div";
 	document.getElementById(div).className = "ideaBox";
 }
+
+function sendLabelAnalytics(){
+	ga("send", "event", "label", "click");
+}
+
+function sendImageAnalytics(){
+	ga("send", "event", "image", "click");
+}
