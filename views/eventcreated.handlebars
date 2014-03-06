@@ -17,7 +17,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->     
 
-    <style type="text/css">
+    <style type="text/css"></style> 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -28,8 +28,9 @@
       ga('send', 'pageview');
 
     </script>
- 
-</style>   
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "ur-a1c51ee6-ac41-543d-4d85-59e1d23e3bed", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 </head>
 
 <body>
@@ -80,13 +81,15 @@
 		</form>
 		<form id="eventcodeform" role="form" method="get" action="/eventpage">
 			<br>
-
+        <!--<span class='st_facebook_large' displayText='Facebook' data-href="{{short_url}}"></span>
+        <span class='st_twitter_large' displayText='Tweet' data-href="{{short_url}}"></span>
+        <span class='st_email_large' displayText='Email' data-href="{{short_url}}"></span>-->
 			<!-- <button type="submit" class="shareButton" id="newevent" value="{{id}}+{{title}}+{{date}}+{{description}}" name="newevent">Post on Facebook</button> -->
 			<div class="fb-share-button" data-href="{{short_url}}" data-width="100" data-type="button_count"></div>
 
-			<button type="submit" class="button" id="newevent" value="{{id}}+{{title}}+{{date}}+{{description}}" name="newevent">Email Code</button>
+			<button type="submit" class="btn btn-default" id="newevent" value="{{id}}+{{title}}+{{date}}+{{description}}" name="newevent">email</button>
  
-			<button type="submit" class="button" id="newevent" value="{{id}}+{{title}}+{{date}}+{{description}}" name="newevent">Copy code to Clipboard</button>
+			<button type="submit" class="btn btn-default" id="newevent" value="{{id}}+{{title}}+{{date}}+{{description}}" name="newevent">copy</button>
 
 			<button type="submit" class="submitButton" id="newevent" value="{{id}}+{{title}}+{{date}}+{{description}}" name="newevent">Go to Event!</button>
 		</form>

@@ -112,6 +112,10 @@
 									<img src="{{image}}" class="image">
 									<h3>{{price}}</h3>
 									<p><center>{{description}}</center></p>
+									{{#if linkPresent}}
+										<a href="{{directlink}}" target="_blank">External Link to {{name}}</a>
+										<br>
+									{{/if}}
 									<button type="submit" class="submitButton" id="{{name}}_bought" name="bought" onclick="claimClicked(this.id, '{{bought}}_{{name}}_image', '{{compName}}_{{bought}}_idea_modal', '{{compName}}_modal')">claim</button>
 								</div>
 							</div>
@@ -133,6 +137,10 @@
 									<img src="{{image}}" class="image">
 									<h3>{{price}}</h3>
 									<p><center>{{description}}</center></p>
+									{{#if linkPresent}}
+										<a href="{{directlink}}" target="_blank">External Link to {{name}}</a>
+										<br>
+									{{/if}}
 									<button type="submit" class="ideaBoughtButton" id="{{name}}_bought" name="bought" disabled="true">claimed</button>
 								</div>
 							</div>
@@ -163,6 +171,7 @@
 					<input id="name" name="name" class="input-lg" type="text" placeholder="Name" required>
 					<input id="description" name="description" class="input-lg" type="text" placeholder="Description" required>
 					<input id="image" name="image" class="input-lg" type="text" placeholder="Image URL">
+					<input id="directlink" name="directlink" class="input-lg" type="text" placeholder="Link">
 					<div class="dropdown">
 				    	<select name="price" class="dropdown" id="price" name="price">
 				        	<option value=""><center>select price</center></option>

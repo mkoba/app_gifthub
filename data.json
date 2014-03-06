@@ -15,7 +15,9 @@
 					"image": "images/laptop.png",
 					"bought": "true",
 					"vote":"1",
-					"voteDir":""
+					"voteDir":"",
+					"directlink":"http://www.amazon.com/Samsung-XE303C12-A01US-Chromebook-Wi-Fi-11-6-Inch/dp/B009LL9VDG/ref=sr_1_1?ie=UTF8&qid=1394068119&sr=8-1&keywords=laptop",
+					"linkPresent": true
 				},
 				{
 					"eventid": "31415",
@@ -26,7 +28,9 @@
 					"image": "images/wine.png",
 					"bought": "false",
 					"vote":"3",
-					"voteDir":""
+					"voteDir":"",
+					"directlink":"",
+					"linkPresent": false
 				},
 				{
 					"eventid": "31415",
@@ -37,7 +41,9 @@
 					"image": "http://1.bp.blogspot.com/-jRKzY3xlENk/UI1pANNv4iI/AAAAAAAAIKU/-jPF8ysL6Ik/s640/Audi+R8+GT850+by+Prior+Design.jpg",
 					"bought": "false",
 					"vote":"1",
-					"voteDir":""
+					"voteDir":"",
+					"directlink":"http://www.audiusa.com/models/audi-r8",
+					"linkPresent": true
 				},
 				{
 					"eventid": "31415",
@@ -48,7 +54,9 @@
 					"image": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/11/1384161811385/755f28ce-0f3b-4f69-8a57-d5d87d57df2c-460x276.jpeg",
 					"bought": "false",
 					"vote":"-1",
-					"voteDir":""
+					"voteDir":"",
+					"directlink":"",
+					"linkPresent": false
 				},
 				{
 					"eventid": "31415",
@@ -59,7 +67,9 @@
 					"image": "http://images3.wikia.nocookie.net/__cb20130113192211/bobsburgerpedia/images/6/6e/Tina_render.png",
 					"bought": "false",
 					"vote":"8",
-					"voteDir":""
+					"voteDir":"",
+					"directlink":"",
+					"linkPresent": false
 				}
 			]
 	},
@@ -79,7 +89,8 @@
 					"image": "images/wine.png",
 					"bought": "true",
 					"vote":"1",
-					"voteDir":""
+					"voteDir":"",
+					"directlink":""
 				},
 				{
 					"eventid": "25589",
@@ -90,7 +101,8 @@
 					"image": "http://iaufrance.org/Content/Uploads/CMS/Images/barcelona-spain.jpg",
 					"bought": "false",
 					"vote":"3",
-					"voteDir":""
+					"voteDir":"",
+					"directlink":""
 				},
 				{
 					"eventid": "25589",
@@ -101,7 +113,8 @@
 					"image": "http://www.happyhourcard.com/places/image_10_47_58.jpg",
 					"bought": "false",
 					"vote":"4",
-					"voteDir":""
+					"voteDir":"",
+					"directlink":""
 				}
 			]
 	},
@@ -121,7 +134,8 @@
 				"image": "images/laptop.png",
 				"bought": "false",
 				"vote":"5",
-				"voteDir":""
+				"voteDir":"",
+				"directlink":""
 			},
 			{
 				"eventid": "84573",
@@ -132,7 +146,8 @@
 				"image": "http://cloudfront.mediamatters.org/static/images/countyfair/teslamodels-autoblog53013.jpg",
 				"bought": "false",
 				"vote":"6",
-				"voteDir":""
+				"voteDir":"",
+				"directlink":""
 			}
 		]
 	}

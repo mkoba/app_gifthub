@@ -26,6 +26,21 @@ exports.view = function(req, res){
 					"vote": "0",
 					"voteDir": ""
 		};
+		if (typeof req.query.directlink != 'undefined'){
+			if (req.query.directlink != ''){
+				newIdea["directlink"] = req.query.directlink;
+				newIdea["linkPresent"] = true;
+			}
+			else{
+				newIdea["directlink"] = '';
+				newIdea["linkPresent"] = false;
+			}
+		}
+		else{
+			newIdea["directlink"] = '';
+			newIdea["linkPresent"] = false;
+		}
+
 		console.log(newIdea);
 		var code = currentEvent;
 		var e = data[code];
