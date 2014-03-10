@@ -40,7 +40,7 @@
 					"description": "She likes to street race!",
 					"image": "http://1.bp.blogspot.com/-jRKzY3xlENk/UI1pANNv4iI/AAAAAAAAIKU/-jPF8ysL6Ik/s640/Audi+R8+GT850+by+Prior+Design.jpg",
 					"bought": "false",
-					"vote":"1",
+					"vote":"5",
 					"voteDir":"",
 					"directlink":"http://www.audiusa.com/models/audi-r8",
 					"linkPresent": true
@@ -68,8 +68,8 @@
 					"bought": "false",
 					"vote":"8",
 					"voteDir":"",
-					"directlink":"",
-					"linkPresent": false
+					"directlink":"http://lmgtfy.com/?q=tina+action+figures",
+					"linkPresent": true
 				}
 			]
 	},
