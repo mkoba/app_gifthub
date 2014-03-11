@@ -22,6 +22,9 @@ function shortenLink(){
 	makebitly(long_url, function(short_url) {
 	    		console.log(short_url);
 	    		document.getElementById("direct_link").value=short_url;
+	    		document.getElementById("fbicon").href="http://www.facebook.com/sharer.php?u=" + short_url;
+	    		document.getElementById("emailicon").href="mailto:?Subject=Simple Share Buttons&Body=I%20just%20created%20an%20event!%20Come%20help%20me%20with%20gift%20ideas!%20 " + short_url;
+	    		document.getElementById("twittericon").href="http://twitter.com/share?url="+short_url+"&text=I just created an event! Come help me with gift ideas.";
 	 			});
 	function makebitly(original_url, func){
 		var login = "o_46o2edlk92";
