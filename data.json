@@ -373,7 +373,7 @@
 				"vote":-3,
 				"voteDir":"",
 				"directlink":"",
-				"linkPresent": false
+				"linkPresent": true
 			},
 			{
 				"eventid": "84573",
